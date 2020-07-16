@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>BikeMap展示</title>
-    <script type="text/javascript" src="static/js/three.js/three.js"></script>
-    <script type="text/javascript" src="static/js/three.js/OBJLoader.js"></script>
-    <script type="text/javascript" src="static/js/three.js/MTLLoader.js"></script>
-    <script type="text/javascript" src="static/js/three.js/OBJMTLLoader.js"></script>
-    <script type="text/javascript" src="static/js/three.js/stats.js"></script>
-    <script type="text/javascript" src="static/js/three.js/TrackballControls.js"></script>
-    <script type="text/javascript" src="static/js/three.js/Projector.js"></script>
-    <script type="text/javascript" src="static/js/three.js/FirstPersonControls.js"></script>
+    <script type="text/javascript" src="static/js/three.js"></script>
+    <script type="text/javascript" src="static/js/OBJLoader.js"></script>
+    <script type="text/javascript" src="static/js/MTLLoader.js"></script>
+    <script type="text/javascript" src="static/js/OBJMTLLoader.js"></script>
+    <script type="text/javascript" src="static/js/stats.js"></script>
+    <script type="text/javascript" src="static/js/TrackballControls.js"></script>
+    <script type="text/javascript" src="static/js/Projector.js"></script>
+    <script type="text/javascript" src="static/js/FirstPersonControls.js"></script>
     <style>
         body {
             /* set margin to 0 and overflow to hidden, to go fullscreen */
@@ -52,7 +52,7 @@
         webGLRenderer.shadowMapSoft = true;
         webGLRenderer.shadowMapType = THREE.PCFShadowMap;
 
-        var textureGrass = THREE.ImageUtils.loadTexture("static/js/three.js/grasslight-big.jpg");
+        var textureGrass = THREE.ImageUtils.loadTexture("static/imgs/grasslight-big.jpg");
         textureGrass.wrapS = THREE.RepeatWrapping;
         textureGrass.wrapT = THREE.RepeatWrapping;
         textureGrass.repeat.set(4, 4);
@@ -197,7 +197,7 @@
 
         var mesh;
         var loader = new THREE.OBJMTLLoader();
-        loader.load('static/js/three.js/paifang.obj', 'static/js/three.js/paifang.mtl', function (object) {
+        loader.load('static/imgs/paifang.obj', 'static/imgs/paifang.mtl', function (object) {
             //  object.scale.set(140, 140, 140);//此处困扰很久了！！！！加载不出来的原因就是这句话!!!!!!!!!!!!!!!!!!!!!
             mesh = object;
             mesh.position.x = 0;
@@ -238,8 +238,8 @@
 
         scene.add(spotLight);
 
-        var textureFlare0 = THREE.ImageUtils.loadTexture("static/js/three.js/lensflare0.png");
-        var textureFlare3 = THREE.ImageUtils.loadTexture("static/js/three.js/lensflare3.png");
+        var textureFlare0 = THREE.ImageUtils.loadTexture("static/imgs/lensflare0.png");
+        var textureFlare3 = THREE.ImageUtils.loadTexture("static/imgs/lensflare3.png");
 
         var flareColor = new THREE.Color(0xffaacc);
         var lensFlare = new THREE.LensFlare(textureFlare0, 350, 0.0, THREE.AdditiveBlending, flareColor);
@@ -273,13 +273,13 @@
             
             if (intersects.length > 0) {
                 if (intersects[0].object === cube1) {
-                    window.open('introduction_1.html');
+                    window.open('https://railwayhs.cn/BikeMap/introduction_1.html');
                 } else if (intersects[0].object === cube2) {
-                    window.open('introduction_2.html');
+                    window.open('https://railwayhs.cn/BikeMap/introduction_2.html');
                 } else if (intersects[0].object === cube3) {
-                    window.open('introduction_3.html');
+                    window.open('https://railwayhs.cn/BikeMap/introduction_3.html');
                 } else if (intersects[0].object === cube4) {
-                    window.open('map.html');
+                    window.open('https://railwayhs.cn/BikeMap/map.html');
                 }
               //  window.open('http://www.jb51.net/article/80767.htm');
                 scene.remove(intersects[0].object);
